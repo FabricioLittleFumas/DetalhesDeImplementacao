@@ -1,0 +1,27 @@
+detalhes ao instalar o windows server 
+atalho para configurar nome do usuário
+	win + r
+		sysdm.cpl
+
+objetivo 
+	configurar endereco ip 
+		configurar na mesma faixa 
+	
+	liberar comando ping no firewall 
+		se o comando estiver bloqueado, necessário desbloquear no firewall 
+		# Verificar se o firewall está bloqueando ICMP (ping)
+		netsh advfirewall firewall show rule name="File and Printer Sharing (Echo Request - ICMPv4-In)"
+
+		# Ou testar desativando temporariamente (APENAS para teste!)
+		netsh advfirewall set allprofiles state off
+
+		# Teste o ping novamente da máquina .1
+		# Se funcionar, o firewall é o culpado
+
+	Solução permanente cmd
+	# Ativar ping (ICMP Echo Request) no firewall do Windows
+	netsh advfirewall firewall add rule name="Allow Ping" protocol=icmpv4:8,any dir=in action=allow
+
+	# Ou via interface gráfica:
+	# Windows Defender Firewall → Advanced Settings → Inbound Rules
+	# Ativar "File and Printer Sharing (Echo Request - ICMPv4-In)"
