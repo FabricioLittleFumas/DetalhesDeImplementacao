@@ -6,6 +6,12 @@ atalho para configurar nome do usuário
 objetivo 
 	configurar endereco ip 
 		configurar na mesma faixa 
+	no canto esquerdo vou em file and storage services 
+		clico em shares 
+		escolho a pasta raiz compartilhada com todos 
+			clico com direito e vou em propriedades 
+				vou em settings e habilito acess-based enumeration
+	fim
 	
 	liberar comando ping no firewall 
 		se o comando estiver bloqueado, necessário desbloquear no firewall 
@@ -25,3 +31,17 @@ objetivo
 	# Ou via interface gráfica:
 	# Windows Defender Firewall → Advanced Settings → Inbound Rules
 	# Ativar "File and Printer Sharing (Echo Request - ICMPv4-In)"
+
+
+Detalhe no compartilhamento de pastas
+
+Compartilho as pastas 
+	crio uma pasta base para que todos acessem a pasta 
+		defino as subpastas e atribuo os grupos que vao participar da atribuicao
+		clico em canto inferior esquerdo em file and storage services 
+			clico em shares
+			clico na pasta base que eu quero 
+				clico com direito 
+				vou em properties 
+					settings 
+						seleciono enable acess-based enumeration
